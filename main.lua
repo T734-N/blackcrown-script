@@ -68,28 +68,15 @@ local Window = WindUI:CreateWindow({
 
     -- Key System
     KeySystem = {
-    Key = {
-        "BC-AX91",
-        "BC-QW77",
-        "BC-ZZ12"
-    },
-
-    Note = "Choose a method to get your key",
-    SaveKey = true,
-
-    Buttons = {
-        {
-            Title = "Get Key",
-            Icon = "key",
-            URL = "https://your-shortlink.com"
+        Key = {
+            "BC-AX91",
+            "BC-QW77",
+            "BC-ZZ12"
         },
-        {
-            Title = "Discord",
-            Icon = "message-circle",
-            URL = "https://discord.gg/FzdCqV22Y"
-        }
+        Note = "Get your key from the website",
+        URL = "https://your-shortlink.com",
+        SaveKey = true
     }
-        }
 
     -- Open UI Button
     OpenButton = {
