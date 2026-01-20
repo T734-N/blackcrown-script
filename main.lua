@@ -62,15 +62,27 @@ local WindUI = loadstring(game:HttpGet(
 ))()
 
 local Window = WindUI:CreateWindow({
-    Title = "BlackCrown-X",
-    Icon = "door-open",
-    Author = "by wdashsuicnsc and timxq_n.",
-    KeySystem = {
-        Key = { "BLACKCROWN-KEY" },                   -- กำหนดคีย์ที่ใช้ได้
-        Note = "Enter your unlock key to open UI.",    -- ข้อความเตือน
-        URL = "https://discord.gg/FzdCqV22Y",   -- ลิงก์ขอคีย์
-        SaveKey = true,                                -- จดจำคีย์อัตโนมัติ
-    }
+    -- ...
+    
+    KeySystem = {                                                               
+        Note = "Example Key System. With platoboost, etc.",                     
+        API = {                                                                 
+            { -- PlatoBoost
+                --[[ Here you can write your title, description, and icon --]]
+                Title = "Platoboost",-- optional . you can remove it
+                Desc = "Click to copy.", -- optional . you can remove it
+                Icon = "rbxassetid://", -- optional . you can remove it
+                
+                Type = "platoboost", -- type
+                ServiceId = 1234, -- service id
+                Secret = "platoboost-secret", -- platoboost secret
+            },                                                                  
+            { -- Panda development
+                Type = "pandadevelopment", -- type
+                ServiceId = "myServiceId", -- service id
+            },                                                                  
+        },                                                                      
+    },                                                                          
 })
     OpenButton = {
         Title = "Open UI",
