@@ -1,3 +1,18 @@
+-- ===== BlackCrown Key System (Stage 1) =====
+
+getgenv().BC_KEY = getgenv().BC_KEY or ""
+
+local function CheckKey()
+    -- ตอนนี้ยังไม่บังคับใช้คีย์
+    -- คืนค่า true = ผ่าน
+    return true
+end
+
+if not CheckKey() then
+    return
+end
+
+-- =========================================
 -- ===== BlackCrown Protection =====
 if not identifyexecutor then
     return
