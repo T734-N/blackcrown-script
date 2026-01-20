@@ -68,14 +68,10 @@ local Window = WindUI:CreateWindow({
 
     -- Key System
     KeySystem = {
-        Key = {
-            "BC-AX91",
-            "BC-QW77",
-            "BC-ZZ12"
-        },
-        Note = "Get your key from the website",
-        URL = "https://your-shortlink.com",
-        SaveKey = true
+        Key = { "BLACKCROWN-KEY" },
+        Note = "Enter your unlock key to open UI.",
+        URL = "https://discord.gg/FzdCqV22Y",
+        SaveKey = true,
     },
 
     -- Open UI Button
