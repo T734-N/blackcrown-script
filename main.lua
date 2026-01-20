@@ -1,31 +1,4 @@
--- ===== BlackCrown Key System (Stage 1) =====
 
-getgenv().BC_KEY = getgenv().BC_KEY or ""
-
-local function CheckKey()
-    -- ตอนนี้ยังไม่บังคับใช้คีย์
-    -- คืนค่า true = ผ่าน
-    return true
-end
-
-if not CheckKey() then
-    return
-end
-
--- =========================================
--- ===== BlackCrown Protection =====
-if not identifyexecutor then
-    return
-end
-
-local function CheckKey()
-    return true -- ยังไม่เปิดใช้คีย์
-end
-
-if not CheckKey() then
-    return
-end
--- =================================
 -- Global
 getgenv().AutoXP = false
 getgenv().AutoCoin = false
@@ -92,7 +65,13 @@ local Window = WindUI:CreateWindow({
     Title = "BlackCrown-X",
     Icon = "door-open",
     Author = "by wdashsuicnsc and timxq_n.",
-
+    KeySystem = {
+        Key = { "BLACKCROWN-KEY" },                   -- กำหนดคีย์ที่ใช้ได้
+        Note = "Enter your unlock key to open UI.",    -- ข้อความเตือน
+        URL = "https://discord.gg/FzdCqV22Y",   -- ลิงก์ขอคีย์
+        SaveKey = true,                                -- จดจำคีย์อัตโนมัติ
+    }
+})
     OpenButton = {
         Title = "Open UI",
         Icon = "monitor",
