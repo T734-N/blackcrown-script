@@ -1,3 +1,16 @@
+-- ===== BlackCrown Protection =====
+if not identifyexecutor then
+    return
+end
+
+local function CheckKey()
+    return true -- ยังไม่เปิดใช้คีย์
+end
+
+if not CheckKey() then
+    return
+end
+-- =================================
 -- Global
 getgenv().AutoXP = false
 getgenv().AutoCoin = false
