@@ -16,5 +16,5 @@ if not identifyexecutor then
 end
 
 -- ===== Script Start =====
-print("BlackCrown Script Loaded Successfully")
-printt("BlackCrown Script Loaded Successfully")
+local a = "Black" .. "Crown"
+print(a .. " Script Loaded Successfully")
