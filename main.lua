@@ -62,27 +62,19 @@ local WindUI = loadstring(game:HttpGet(
 ))()
 
 local Window = WindUI:CreateWindow({
-    -- ...
-    
-    KeySystem = {                                                               
-        Note = "Example Key System. With platoboost, etc.",                     
-        API = {                                                                 
-            { -- PlatoBoost
-                --[[ Here you can write your title, description, and icon --]]
-                Title = "Platoboost",-- optional . you can remove it
-                Desc = "Click to copy.", -- optional . you can remove it
-                Icon = "rbxassetid://", -- optional . you can remove it
-                
-                Type = "platoboost", -- type
-                ServiceId = 1234, -- service id
-                Secret = "platoboost-secret", -- platoboost secret
-            },                                                                  
-            { -- Panda development
-                Type = "pandadevelopment", -- type
-                ServiceId = "myServiceId", -- service id
-            },                                                                  
-        },                                                                      
-    },                                                                          
+    Title = "BlackCrown-X",
+    Icon = "door-open",
+    Author = "by wdashsuicnsc and timxq_n.",
+
+    -- Key System
+    KeySystem = {
+        Key = { "BLACKCROWN-KEY" },
+        Note = "Enter your unlock key to open UI.",
+        URL = "https://discord.gg/FzdCqV22Y",
+        SaveKey = true,
+    },
+
+    -- Open UI Button
     OpenButton = {
         Title = "Open UI",
         Icon = "monitor",
@@ -97,6 +89,7 @@ local Window = WindUI:CreateWindow({
         Draggable = true
     }
 })
+
 
 local Tab = Window:Tab({
     Title = "Main",
