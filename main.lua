@@ -76,7 +76,7 @@ local Window = WindUI:CreateWindow({
         Note = "Get your key from the website",
         URL = "https://your-shortlink.com",
         SaveKey = true
-    }
+    },
 
     -- Open UI Button
     OpenButton = {
