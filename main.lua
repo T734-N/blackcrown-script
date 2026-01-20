@@ -83,7 +83,6 @@ local Window = WindUI:CreateWindow({
             },                                                                  
         },                                                                      
     },                                                                          
-})
     OpenButton = {
         Title = "Open UI",
         Icon = "monitor",
