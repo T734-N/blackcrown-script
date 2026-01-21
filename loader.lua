@@ -5,7 +5,7 @@
 local SCRIPT_BY_PLACE = {
     [9412214742] = function()
         -- Script ตัวที่ 1
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/T734-N/blackcrown-script/main/loader.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/T734-N/blackcrown-script/refs/heads/main/main.lua"))()
     end,
 
     [9876543210] = function()
