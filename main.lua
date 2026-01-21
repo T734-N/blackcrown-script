@@ -66,7 +66,12 @@ local Window = WindUI:CreateWindow({
     Icon = "door-open",
     Author = "by wdashsuicnsc and timxq_n.",
 
-    -- Key System
+KeySystem = {
+    Key = { "BLACKCROWN-KEY" },
+    Note = "Get key: your-getkey-link.com | Discord: discord.gg/FzdCqV22Y",
+    URL = "https://your-getkey-link.com",
+    SaveKey = true
+        },
     --              ↓ Change this to your service (like `luarmor`, `platoboost`, `keyguardian`)
 WindUI.Services.mysuperservicetogetkey = {
     Name = "My Super Service",
