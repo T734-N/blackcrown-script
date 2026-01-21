@@ -68,12 +68,12 @@ local Window = WindUI:CreateWindow({
 
     
     KeySystem = {
-        Note = "...",
+        Note = "Get Key",
         API = {
             {
-                Type = "junkie",
-                ServiceId = 1234",
-                SuperId = 1234",
+                Type = "junkie dev",
+                ServiceId = "realuerd",
+                ApiKey = "",
             },
         },
     },
