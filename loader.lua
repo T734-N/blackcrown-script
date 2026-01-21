@@ -11,7 +11,7 @@ local SCRIPT_BY_PLACE = {
     [9876543210] = function()
         -- Script ตัวที่ 2
         loadstring(game:HttpGet(
-            "https://raw.githubusercontent.com/USER/REPO/main/script2.lua"
+            "https://raw.githubusercontent.com/T734-N/blackcrown-script/refs/heads/main/obby%20Zombie.lua"
         ))()
     end
 }
