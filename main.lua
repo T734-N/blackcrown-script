@@ -67,13 +67,37 @@ local Window = WindUI:CreateWindow({
     Author = "by wdashsuicnsc and timxq_n.",
 
     -- Key System
-    KeySystem = {
-        Key = { "BLACKCROWN-KEY" },
-        Note = "Enter your unlock key to open UI.",
-        URL = "",
-        Discord = "https://discord.gg/FzdCqV22Y",
-        SaveKey = true,
-    },
+    --              ↓ Change this to your service (like `luarmor`, `platoboost`, `keyguardian`)
+WindUI.Services.mysuperservicetogetkey = {
+    Name = "My Super Service",
+    Icon = "droplet", -- <-- lucide or rbxassetid or raw link to img
+    
+    Args = { "ServiceId", "SuperId" }, --      <- \
+                                       --         |
+    New = function(ServiceId, SuperId) -- <------ | Args!!!!!!!!!!!!
+        function validateKey(key) -- <--- this too important!!!
+            -- your function to validate key
+            -- see examples at src/utils/ in WindUI Repo
+            
+            if not key then
+                return false, "Key is invalid!" 
+                
+            end
+            
+            return true, "Key is valid!" 
+        end
+        
+        function copyLink()
+            return setclipboard("link to key system service.")
+        end
+        
+        return {
+            --↓↓ do not change this!!
+            Verify = validateKey, -- <-- important!!!
+            Copy = copyLink -- <-- important!!!
+        }
+    end
+        },
 
     -- Open UI Button
     OpenButton = {
