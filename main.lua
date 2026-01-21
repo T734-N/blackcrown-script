@@ -70,7 +70,8 @@ local Window = WindUI:CreateWindow({
     KeySystem = {
         Key = { "BLACKCROWN-KEY" },
         Note = "Enter your unlock key to open UI.",
-        URL = "https://discord.gg/FzdCqV22Y",
+        URL = "",
+        Discord = "https://discord.gg/FzdCqV22Y",
         SaveKey = true,
     },
 
