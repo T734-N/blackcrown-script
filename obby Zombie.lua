@@ -38,6 +38,7 @@ end
 local WindUI = loadstring(game:HttpGet(
     "https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"
 ))()
+
 local Window = WindUI:CreateWindow({
     Title = "BlackCrown-X",
     Icon = "door-open",
@@ -48,20 +49,23 @@ local Window = WindUI:CreateWindow({
         URL = "https://discord.gg/FzdCqV22Y",   -- ลิงก์ขอคีย์
         SaveKey = true,                                -- จดจำคีย์อัตโนมัติ
     },
-
+    -- Open UI Button
     OpenButton = {
-    Title = "Open UI",
-    Icon = "monitor",
-    CornerRadius = UDim.new(0, 16),
-    StrokeThickness = 2,
-    Color = ColorSequence.new(
-        Color3.fromHex("FF0F7B"),
-        Color3.fromHex("F89B29")
-    ),
-    OnlyMobile = false,
-    Enabled = true,
-    Draggable = true
-        }
+        Title = "Open UI",
+        Icon = "monitor",
+        CornerRadius = UDim.new(0, 16),
+        StrokeThickness = 2,
+        Color = ColorSequence.new(
+            Color3.fromHex("FF0F7B"),
+            Color3.fromHex("F89B29")
+        ),
+        OnlyMobile = false,
+        Enabled = true,
+        Draggable = true
+    }
+})
+
+
 local Tab = Window:Tab({
     Title = "Main",
     Icon = "bird",
