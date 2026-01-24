@@ -85,13 +85,16 @@ Tab:Input({
 
 
 
-Tab:Slider({
+Tab:Input({
     Title = "Kill Range",
-    Min = 5,
-    Max = 200,
-    Default = getgenv().KillRange,
-    Callback = function(v)
-        getgenv().KillRange = v
+    Value = tostring(getgenv().KillRange),
+    Type = "Input",
+    InputIcon = "target",
+    Callback = function(input)
+        local v = tonumber(input)
+        if v then
+            getgenv().KillRange = math.clamp(v, 5, 200)
+        end
     end
 })
 -- Toggle Kill Aura
