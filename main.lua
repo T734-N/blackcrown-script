@@ -66,19 +66,6 @@ local Window = WindUI:CreateWindow({
     Icon = "door-open",
     Author = "by wdashsuicnsc and timxq_n.",
 
-    
-    KeySystem = {
-        Note = "Get Key",
-        API = {
-            {
-                Type = "junkie dev",
-                ServiceId = "realuerd",
-                ApiKey = "",
-            },
-        },
-    },
-})
-
     -- Open UI Button
     OpenButton = {
         Title = "Open UI",
