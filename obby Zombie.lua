@@ -50,19 +50,18 @@ local Window = WindUI:CreateWindow({
     },
 
     OpenButton = {
-        Title = "Open UI",
-        Icon = "monitor",
-        CornerRadius = UDim.new(0, 16),
-        StrokeThickness = 2,
-        Color = ColorSequence.new(
-            Color3.fromHex("FF0F7B"),
-            Color3.fromHex("F89B29")
-        ),
-        OnlyMobile = false,
-        Enabled = true,
-        Draggable = true
-    }
-})
+    Title = "Open UI",
+    Icon = "monitor",
+    CornerRadius = UDim.new(0, 16),
+    StrokeThickness = 2,
+    Color = ColorSequence.new(
+        Color3.fromHex("FF0F7B"),
+        Color3.fromHex("F89B29")
+    ),
+    OnlyMobile = false,
+    Enabled = true,
+    Draggable = true
+        }
 local Tab = Window:Tab({
     Title = "Main",
     Icon = "bird",
