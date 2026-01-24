@@ -7,8 +7,7 @@ getgenv().KillRange = 50
 
 local player = Players.LocalPlayer
 local ZombieFolder = workspace:WaitForChild("AliveZombies")
-local ATTACK_RANGE = 50 -- ระยะยิง (ปรับได้)
--- อัปเดตตัวละครเสมอ
+
 local function getChar()
     local char = player.Character or player.CharacterAdded:Wait()
     return char, char:WaitForChild("HumanoidRootPart"), char:WaitForChild("Humanoid")
@@ -18,36 +17,25 @@ local function kill()
     local char, rootPart = getChar()
     if not char or not rootPart then return end
 
-    local backpack = player.Backpack
-
     for _, zombie in pairs(ZombieFolder:GetChildren()) do
-        local zombieRoot = zombie:FindFirstChild("HumanoidRootPart")
-        local zombieHum = zombie:FindFirstChild("Humanoid")
+        local zRoot = zombie:FindFirstChild("HumanoidRootPart")
+        local zHum = zombie:FindFirstChild("Humanoid")
 
-        if zombieRoot and zombieHum and zombieHum.Health > 0 then
-            local distance = (rootPart.Position - zombieRoot.Position).Magnitude
-
-            -- ✅ เช็คระยะ
-            if distance <= ATTACK_RANGE then
-                for _, tool in pairs(backpack:GetChildren()) do
+        if zRoot and zHum and zHum.Health > 0 then
+            local dist = (rootPart.Position - zRoot.Position).Magnitude
+            if dist <= getgenv().KillRange then
+                for _, tool in pairs(player.Backpack:GetChildren()) do
                     if tool:IsA("Tool") then
-                        local args = {
-                            tool,
-                            { zombie },
-                            true,
-                            rootPart.CFrame
-                        }
-
-                        ReplicatedStorage
-                            :WaitForChild("Remotes")
-                            :WaitForChild("Gunshot")
-                            :FireServer(unpack(args))
+                        ReplicatedStorage.Remotes.Gunshot:FireServer(tool, {zombie}, true, rootPart.CFrame)
                     end
                 end
             end
         end
     end
-endndocal WindUI = loadstring(game:HttpGet(
+end
+        
+    
+local WindUI = loadstring(game:HttpGet(
     "https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"
 ))()
 local Window = WindUI:CreateWindow({
@@ -72,7 +60,7 @@ local Window = WindUI:CreateWindow({
         ),
         OnlyMobile = false,
         Enabled = true,
-        Draggable = trKillRange)
+        Draggable = true)
 
 local Tab = Window:Tab({
     Title = "Main",
@@ -99,15 +87,13 @@ local Input = Tab:Input({
 
 
 Tab:Slider({
-    Title = "Kill Aura Range",
+    Title = "Kill Range",
     Min = 5,
     Max = 200,
-    Default = 50,
+    Default = getgenv().KillRange,
     Callback = function(v)
         getgenv().KillRange = v
-      if distance <= getgenv().KillRange then
     end
-                    end
 })
 -- Toggle Kill Aura
 Tab:Toggle({
