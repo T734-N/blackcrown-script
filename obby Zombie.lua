@@ -60,7 +60,8 @@ local Window = WindUI:CreateWindow({
         ),
         OnlyMobile = false,
         Enabled = true,
-        Draggable = true)
+        Draggable = true
+    }
 })
 local Tab = Window:Tab({
     Title = "Main",
