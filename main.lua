@@ -65,7 +65,12 @@ local Window = WindUI:CreateWindow({
     Title = "BlackCrown-X",
     Icon = "door-open",
     Author = "by wdashsuicnsc and timxq_n.",
-
+    KeySystem = {
+        Key = { "" },                   -- กำหนดคีย์ที่ใช้ได้
+        Note = "Enter your unlock key to open UI.",    -- ข้อความเตือน
+        URL = "https://discord.gg/FzdCqV22Y",   -- ลิงก์ขอคีย์
+        SaveKey = true,                                -- จดจำคีย์อัตโนมัติ
+    },
     -- Open UI Button
     OpenButton = {
         Title = "Open UI",
