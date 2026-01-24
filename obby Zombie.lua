@@ -68,22 +68,17 @@ local Tab = Window:Tab({
     Locked = false
 })
 
-local Input = Tab:Input({
-    Title = "second",
-    Value = "1",
-    InputIcon = "bird",
-    Type = "Input",
-    Placeholder = "Enter seconds...",
+Tab:Input({
+    Title = "Delay (Seconds)",
+    Value = tostring(getgenv().killAuraDelay),
     Callback = function(input)
-        local num = tonumber(input)
-        if num and num > 0 then
-            getgenv().killAuraDelay = num
-            print("Kill Aura delay set to:", num)
-        else
-            warn("กรุณาใส่ตัวเลขมากกว่า 0")
+        local n = tonumber(input)
+        if n and n > 0 then
+            getgenv().killAuraDelay = n
         end
     end
 })
+
 
 
 Tab:Slider({
